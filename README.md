@@ -1,4 +1,4 @@
-# drug_wars
+# Drug Wars
 
 ### DESCRIPTION
 	A simple TBS game that is inspired by Drug Wars by John E. Dell (1984). Made with Godot Engine (v3.4) by using GDScript.

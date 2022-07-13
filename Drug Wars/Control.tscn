@@ -1,0 +1,1600 @@
+[gd_scene load_steps=77 format=2]
+
+[ext_resource path="res://res/START.png" type="Texture" id=1]
+[ext_resource path="res://res/QUIT.png" type="Texture" id=2]
+[ext_resource path="res://res/SETTINGS.png" type="Texture" id=3]
+[ext_resource path="res://Control.gd" type="Script" id=4]
+[ext_resource path="res://Game.gd" type="Script" id=5]
+[ext_resource path="res://res/SettingsBG.png" type="Texture" id=6]
+[ext_resource path="res://Control.tres" type="DynamicFont" id=7]
+[ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=8]
+[ext_resource path="res://ButtonHover.tres" type="StyleBox" id=9]
+[ext_resource path="res://ButtonDisabled.tres" type="StyleBox" id=10]
+[ext_resource path="res://res/Background.png" type="Texture" id=11]
+[ext_resource path="res://SharkClose.tres" type="StyleBox" id=12]
+[ext_resource path="res://res/smg.png" type="Texture" id=13]
+[ext_resource path="res://res/revolver.png" type="Texture" id=14]
+[ext_resource path="res://res/pistol.png" type="Texture" id=15]
+[ext_resource path="res://res/shotgun.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFontData" id=31]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=32]
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 31 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+use_filter = true
+extra_spacing_top = 1
+extra_spacing_bottom = 6
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 25
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 31 )
+
+[sub_resource type="DynamicFont" id=55]
+size = 22
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 31 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 39
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 31 )
+
+[sub_resource type="DynamicFontData" id=8]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+use_filter = true
+font_data = SubResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.498039, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.392157, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=12]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.392157, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+use_filter = true
+font_data = SubResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0.498039, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0.392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=16]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0, 0, 0.392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=19]
+size = 18
+use_filter = true
+font_data = SubResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=58]
+bg_color = Color( 0, 0.196078, 0.392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=59]
+bg_color = Color( 0, 0.196078, 0.392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=60]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=61]
+bg_color = Color( 0, 0.196078, 0.392157, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.666667, 0.392157, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.54902, 0.333333, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=22]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.54902, 0.333333, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.498039, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.392157, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=26]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.392157, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFontData" id=3]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=28]
+size = 25
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 23
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 5
+extra_spacing_char = 5
+extra_spacing_space = 5
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 28
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=35]
+bg_color = Color( 0.0470588, 0, 0.141176, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.482353, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.0941176, 0, 0.0941176, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0.482353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=57]
+bg_color = Color( 0.164706, 0.196078, 0.321569, 1 )
+
+[sub_resource type="DynamicFontData" id=37]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=38]
+size = 72
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 37 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 72
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 37 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 72
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 37 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 72
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 37 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.584314, 0, 0, 1 )
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=43]
+bg_color = Color( 0.584314, 0, 0, 1 )
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=44]
+bg_color = Color( 0.584314, 0, 0, 1 )
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=45]
+bg_color = Color( 0.584314, 0, 0, 1 )
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=46]
+bg_color = Color( 0.584314, 0, 0, 1 )
+corner_radius_bottom_left = 15
+
+[sub_resource type="DynamicFontData" id=48]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=49]
+size = 24
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 48 )
+
+[sub_resource type="DynamicFontData" id=53]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=62]
+size = 20
+use_filter = true
+extra_spacing_bottom = 8
+font_data = SubResource( 53 )
+
+[sub_resource type="DynamicFontData" id=63]
+resource_local_to_scene = true
+font_path = "res://res/Swansea.ttf"
+
+[sub_resource type="DynamicFont" id=54]
+size = 20
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 63 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 41
+use_filter = true
+extra_spacing_bottom = 17
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+use_filter = true
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 72
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 48 )
+
+[sub_resource type="StyleBoxFlat" id=56]
+bg_color = Color( 0.0235294, 0.298039, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=51]
+bg_color = Color( 0, 0, 0, 1 )
+expand_margin_top = 20.0
+
+[sub_resource type="DynamicFont" id=52]
+size = 72
+use_filter = true
+extra_spacing_bottom = 5
+font_data = SubResource( 48 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.172
+anchor_bottom = 1.2
+margin_right = -206.4
+margin_bottom = -144.0
+script = ExtResource( 4 )
+
+[node name="Game" type="Control" parent="."]
+visible = false
+margin_right = 1200.0
+margin_bottom = 720.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource( 5 )
+
+[node name="BG" type="Sprite" parent="Game"]
+position = Vector2( 600, 360 )
+texture = ExtResource( 11 )
+
+[node name="InfoBox" type="Panel" parent="Game"]
+margin_left = 40.0
+margin_top = 536.0
+margin_right = 568.0
+margin_bottom = 664.0
+
+[node name="Info" type="RichTextLabel" parent="Game"]
+margin_left = 48.0
+margin_top = 544.0
+margin_right = 560.0
+margin_bottom = 656.0
+hint_tooltip = "Info Box"
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 32 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Market" type="ItemList" parent="Game"]
+margin_left = 32.0
+margin_top = 176.0
+margin_right = 576.0
+margin_bottom = 528.0
+hint_tooltip = "Drug Market"
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.803922, 0.803922, 0.803922, 1 )
+custom_fonts/font = SubResource( 7 )
+
+[node name="Inventory" type="ItemList" parent="Game"]
+margin_left = 624.0
+margin_top = 176.0
+margin_right = 1168.0
+margin_bottom = 528.0
+hint_tooltip = "Inventory"
+custom_colors/font_color = Color( 0.803922, 0.803922, 0.803922, 1 )
+custom_fonts/font = SubResource( 7 )
+
+[node name="Labels" type="Control" parent="Game"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocationLabel" type="Label" parent="Game/Labels"]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 110.0
+margin_bottom = 32.0
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "You are here now"
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 33 )
+text = "Location: "
+
+[node name="DayLabel" type="Label" parent="Game/Labels"]
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 86.0
+margin_bottom = 62.0
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "When the day reach 21 / 31 / 61 game ends"
+mouse_filter = 1
+custom_fonts/font = SubResource( 33 )
+text = "Day: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpaceLabel" type="Label" parent="Game/Labels"]
+margin_left = 1071.0
+margin_top = 502.0
+margin_right = 1152.0
+margin_bottom = 519.0
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "Inventory space info"
+mouse_filter = 1
+custom_fonts/font = SubResource( 55 )
+text = "0/100"
+align = 2
+
+[node name="CashLabel" type="Label" parent="Game/Labels"]
+margin_left = 464.0
+margin_top = 16.0
+margin_right = 526.0
+margin_bottom = 30.0
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "Amount of money you are carrying now"
+mouse_filter = 1
+custom_fonts/font = SubResource( 33 )
+text = "Cash: "
+
+[node name="DebtLabel" type="Label" parent="Game/Labels"]
+margin_left = 464.0
+margin_top = 48.0001
+margin_right = 526.0
+margin_bottom = 62.0001
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "Amount you owe to the loan shark"
+mouse_filter = 1
+custom_fonts/font = SubResource( 33 )
+text = "Loan: "
+
+[node name="GunsLabel" type="Label" parent="Game/Labels"]
+margin_left = 840.0
+margin_top = 16.0
+margin_right = 902.0
+margin_bottom = 30.0
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "Number of guns you and your dummies carrying"
+mouse_filter = 1
+custom_fonts/font = SubResource( 33 )
+text = "Damage: "
+
+[node name="HealthLabel" type="Label" parent="Game/Labels"]
+margin_left = 840.0
+margin_top = 48.0
+margin_right = 926.0
+margin_bottom = 67.0
+rect_scale = Vector2( 1.1, 1.1 )
+hint_tooltip = "Your health reduces if you have no dummies left"
+mouse_filter = 1
+custom_fonts/font = SubResource( 33 )
+text = "Health: "
+
+[node name="MarketLabel" type="Label" parent="Game/Labels"]
+margin_left = 240.0
+margin_top = 136.0
+margin_right = 322.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 34 )
+text = "MARKET"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryLabel" type="Label" parent="Game/Labels"]
+margin_left = 808.0
+margin_top = 136.0
+margin_right = 922.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 34 )
+text = "INVENTORY"
+
+[node name="Buttons" type="Control" parent="Game"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TradeButton" type="Button" parent="Game/Buttons"]
+margin_left = 1024.0
+margin_top = 576.0
+margin_right = 1152.0
+margin_bottom = 632.0
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 8 )
+disabled = true
+text = "TRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TradeButton2" type="Button" parent="Game/Buttons"]
+visible = false
+margin_left = 1024.0
+margin_top = 576.0
+margin_right = 1152.0
+margin_bottom = 632.0
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+disabled = true
+text = "TRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TravelButton" type="Button" parent="Game/Buttons"]
+margin_left = 832.0
+margin_top = 576.0
+margin_right = 960.0
+margin_bottom = 632.0
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "TRAVEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveButton" type="Button" parent="Game/Buttons"]
+margin_top = 672.0
+margin_right = 96.0
+margin_bottom = 720.0
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 8 )
+text = "SAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadButton" type="Button" parent="Game/Buttons"]
+margin_left = 96.0
+margin_top = 672.0
+margin_right = 192.0
+margin_bottom = 720.0
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = SubResource( 58 )
+custom_styles/pressed = SubResource( 59 )
+custom_styles/disabled = SubResource( 60 )
+custom_styles/normal = SubResource( 61 )
+text = "LOAD"
+
+[node name="RestartButton" type="Button" parent="Game/Buttons"]
+margin_left = 192.0
+margin_top = 672.0
+margin_right = 288.0
+margin_bottom = 720.0
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+text = "RESTART"
+
+[node name="MenuButton" type="Button" parent="Game/Buttons"]
+margin_left = 288.0
+margin_top = 672.0
+margin_right = 385.0
+margin_bottom = 720.0
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/disabled = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
+text = "MENU"
+
+[node name="TravelMenu" type="PopupMenu" parent="Game"]
+margin_left = 712.0
+margin_top = 288.0
+margin_right = 1080.0
+margin_bottom = 560.0
+rect_clip_content = true
+custom_fonts/font = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocationList" type="ItemList" parent="Game/TravelMenu"]
+margin_right = 304.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Travel" type="Button" parent="Game/TravelMenu"]
+margin_left = 304.0
+margin_right = 368.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 30 )
+text = ">>"
+
+[node name="Cancel" type="Button" parent="Game/TravelMenu"]
+margin_left = 304.0
+margin_top = 136.0
+margin_right = 368.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 30 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyPopup" type="PopupMenu" parent="Game"]
+margin_left = 584.0
+margin_top = 568.0
+margin_right = 820.0
+margin_bottom = 600.0
+rect_clip_content = true
+mouse_filter = 2
+
+[node name="QuantityLabel" type="Label" parent="Game/BuyPopup"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 67.0
+margin_bottom = 23.0
+rect_scale = Vector2( 1.3, 1.3 )
+mouse_filter = 0
+text = "Quantity: "
+valign = 1
+
+[node name="BuyQuantity" type="LineEdit" parent="Game/BuyPopup"]
+margin_left = 88.0
+margin_top = 4.0
+margin_right = 162.0
+margin_bottom = 28.0
+max_length = 3
+placeholder_text = "0"
+
+[node name="ConfirmBuy" type="Button" parent="Game/BuyPopup"]
+margin_left = 154.0
+margin_top = 4.0
+margin_right = 234.0
+margin_bottom = 28.0
+text = "BUY"
+
+[node name="SellPopup" type="PopupMenu" parent="Game"]
+margin_left = 584.0
+margin_top = 568.0
+margin_right = 820.0
+margin_bottom = 600.0
+mouse_filter = 2
+
+[node name="QuantityLabel" type="Label" parent="Game/SellPopup"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 67.0
+margin_bottom = 23.0
+rect_scale = Vector2( 1.3, 1.3 )
+text = "Quantity: "
+valign = 1
+
+[node name="SellQuantity" type="LineEdit" parent="Game/SellPopup"]
+margin_left = 88.0
+margin_top = 4.0
+margin_right = 154.0
+margin_bottom = 28.0
+placeholder_text = "0"
+
+[node name="ConfirmSell" type="Button" parent="Game/SellPopup"]
+margin_left = 154.0
+margin_top = 4.0
+margin_right = 234.0
+margin_bottom = 28.0
+text = "SELL"
+
+[node name="Cops" type="Panel" parent="Game"]
+visible = false
+margin_left = 448.0
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 512.0
+custom_styles/panel = SubResource( 35 )
+
+[node name="You" type="Label" parent="Game/Cops"]
+margin_left = 212.0
+margin_top = 32.0
+margin_right = 236.0
+margin_bottom = 46.0
+text = "You"
+
+[node name="Cop" type="Label" parent="Game/Cops"]
+margin_left = 50.0
+margin_top = 32.0
+margin_right = 142.0
+margin_bottom = 46.0
+text = "Officer Jackass"
+
+[node name="YourDamage" type="Label" parent="Game/Cops"]
+margin_left = 189.0
+margin_top = 96.0
+margin_right = 257.0
+margin_bottom = 110.0
+text = "Damage: 0"
+
+[node name="CopDamage" type="Label" parent="Game/Cops"]
+margin_left = 58.0
+margin_top = 96.0
+margin_right = 134.0
+margin_bottom = 110.0
+text = "Damage: 40"
+
+[node name="YourHealth" type="Label" parent="Game/Cops"]
+margin_left = 189.0
+margin_top = 144.0
+margin_right = 263.0
+margin_bottom = 158.0
+text = "Health: 100"
+
+[node name="CopHealth" type="Label" parent="Game/Cops"]
+margin_left = 58.0
+margin_top = 144.0
+margin_right = 132.0
+margin_bottom = 158.0
+text = "Health: 100"
+
+[node name="Fight" type="Button" parent="Game/Cops"]
+margin_left = 190.0
+margin_top = 192.0
+margin_right = 256.0
+margin_bottom = 224.0
+text = "FIGHT"
+
+[node name="Run" type="Button" parent="Game/Cops"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 128.0
+margin_bottom = 224.0
+text = "RUN"
+
+[node name="Shark" type="Panel" parent="Game"]
+visible = false
+margin_left = 448.0
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 512.0
+custom_styles/panel = SubResource( 36 )
+
+[node name="LoanSharkLabel" type="Label" parent="Game/Shark"]
+margin_left = 114.0
+margin_top = 32.0
+margin_right = 206.0
+margin_bottom = 46.0
+text = "LOAN SHARK"
+
+[node name="OwedLabel" type="Label" parent="Game/Shark"]
+margin_left = 112.0
+margin_top = 80.0
+margin_right = 157.0
+margin_bottom = 94.0
+text = "Owed: "
+
+[node name="PayButton" type="Button" parent="Game/Shark"]
+margin_left = 179.0
+margin_top = 192.0
+margin_right = 251.0
+margin_bottom = 224.0
+text = "PAY"
+
+[node name="BorrowButton" type="Button" parent="Game/Shark"]
+margin_left = 40.0
+margin_top = 192.0
+margin_right = 112.0
+margin_bottom = 224.0
+text = "BORROW"
+
+[node name="BorrowEdit" type="LineEdit" parent="Game/Shark"]
+margin_left = 40.0
+margin_top = 136.0
+margin_right = 112.0
+margin_bottom = 160.0
+placeholder_text = "0"
+
+[node name="PayEdit" type="LineEdit" parent="Game/Shark"]
+margin_left = 179.0
+margin_top = 136.0
+margin_right = 251.0
+margin_bottom = 160.0
+placeholder_text = "0"
+
+[node name="BorrowMax" type="CheckBox" parent="Game/Shark"]
+margin_left = 112.0
+margin_top = 136.0
+margin_right = 166.0
+margin_bottom = 160.0
+text = "Max"
+
+[node name="PayMax" type="CheckBox" parent="Game/Shark"]
+margin_left = 251.0
+margin_top = 136.0
+margin_right = 305.0
+margin_bottom = 160.0
+text = "Max"
+
+[node name="SharkClose" type="Button" parent="Game/Shark"]
+margin_left = 298.0
+margin_right = 320.0
+margin_bottom = 20.0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = ExtResource( 12 )
+custom_styles/pressed = ExtResource( 12 )
+custom_styles/focus = ExtResource( 12 )
+custom_styles/disabled = ExtResource( 12 )
+custom_styles/normal = ExtResource( 12 )
+text = "x"
+
+[node name="GunShop" type="Panel" parent="Game"]
+visible = false
+margin_left = 300.0
+margin_top = 180.0
+margin_right = 900.0
+margin_bottom = 540.0
+custom_styles/panel = SubResource( 57 )
+
+[node name="PistolBtn" type="TextureRect" parent="Game/GunShop"]
+margin_right = 1000.0
+margin_bottom = 600.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 15 )
+stretch_mode = 4
+
+[node name="PistolLbl" type="Label" parent="Game/GunShop/PistolBtn"]
+margin_left = 70.0
+margin_top = 330.0
+margin_right = 320.0
+margin_bottom = 552.0
+custom_fonts/font = SubResource( 38 )
+text = "PISTOL
+
+$3500
+
+2 HIT"
+
+[node name="RevolverBtn" type="TextureRect" parent="Game/GunShop"]
+margin_left = 300.0
+margin_right = 1300.0
+margin_bottom = 600.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
+stretch_mode = 4
+
+[node name="RevolverLbl" type="Label" parent="Game/GunShop/RevolverBtn"]
+margin_left = 70.0
+margin_top = 330.0
+margin_right = 446.0
+margin_bottom = 552.0
+custom_fonts/font = SubResource( 39 )
+text = "REVOLVER
+
+$6500
+
+4 HIT"
+
+[node name="SmgBtn" type="TextureRect" parent="Game/GunShop"]
+margin_top = 180.0
+margin_right = 1000.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 13 )
+stretch_mode = 4
+
+[node name="SmgLbl" type="Label" parent="Game/GunShop/SmgBtn"]
+margin_left = 70.0
+margin_top = 330.0
+margin_right = 310.0
+margin_bottom = 552.0
+custom_fonts/font = SubResource( 40 )
+text = "SMG
+
+$10000
+
+7 HIT"
+
+[node name="ShotgunBtn" type="TextureRect" parent="Game/GunShop"]
+margin_left = 300.0
+margin_top = 180.0
+margin_right = 1300.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+stretch_mode = 4
+
+[node name="ShotgunLbl" type="Label" parent="Game/GunShop/ShotgunBtn"]
+margin_left = 70.0
+margin_top = 330.0
+margin_right = 422.0
+margin_bottom = 552.0
+custom_fonts/font = SubResource( 41 )
+text = "SHOTGUN
+
+$12000
+
+9 HIT"
+
+[node name="Button" type="Button" parent="Game/GunShop"]
+margin_left = 569.0
+margin_right = 600.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 7 )
+custom_styles/hover = SubResource( 42 )
+custom_styles/pressed = SubResource( 43 )
+custom_styles/focus = SubResource( 44 )
+custom_styles/disabled = SubResource( 45 )
+custom_styles/normal = SubResource( 46 )
+text = "X"
+
+[node name="Warning" type="AcceptDialog" parent="Game"]
+margin_left = 429.0
+margin_top = 300.0
+margin_right = 779.0
+margin_bottom = 420.0
+window_title = "WARNING!"
+
+[node name="WarningLbl" type="Label" parent="Game/Warning"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 342.0
+margin_bottom = 84.0
+custom_constants/line_spacing = 10
+custom_fonts/font = SubResource( 49 )
+text = "3 days left!
+Sell all drugs before game end!"
+align = 1
+
+[node name="LoadDialog" type="ConfirmationDialog" parent="Game"]
+margin_top = 576.0
+margin_right = 330.0
+margin_bottom = 661.0
+window_title = "LOAD"
+
+[node name="LoadLbl" type="Label" parent="Game/LoadDialog"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 322.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0.498039, 0.74902, 1, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "Do you want to load the last save?
+You will lose the current game data."
+
+[node name="RestartDialog" type="ConfirmationDialog" parent="Game"]
+margin_left = 78.0
+margin_top = 576.0
+margin_right = 408.0
+margin_bottom = 661.0
+window_title = "RESTART"
+
+[node name="RestartLbl" type="Label" parent="Game/RestartDialog"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 322.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 1, 0.792157, 0.498039, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "Do you want to restart game?
+You will lose the current game data."
+
+[node name="MenuDialog" type="ConfirmationDialog" parent="Game"]
+margin_left = 156.0
+margin_top = 576.0
+margin_right = 486.0
+margin_bottom = 661.0
+window_title = "MENU"
+
+[node name="MenuLbl" type="Label" parent="Game/MenuDialog"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 322.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 1, 0.498039, 0.498039, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "Do you want to quit to menu?
+You will lose the current game data."
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+margin_right = 1200.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG_Settings" type="Sprite" parent="Settings"]
+position = Vector2( 600, 400 )
+texture = ExtResource( 6 )
+
+[node name="EasyCheck" type="CheckBox" parent="Settings"]
+margin_left = 256.0
+margin_top = 48.0001
+margin_right = 336.0
+margin_bottom = 79.0001
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.498039, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.27451, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+disabled = true
+text = "EASY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NormalCheck" type="CheckBox" parent="Settings"]
+margin_left = 384.0
+margin_top = 48.0
+margin_right = 493.0
+margin_bottom = 79.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.74902, 0.74902, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.27451, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+disabled = true
+pressed = true
+text = "NORMAL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HardCheck" type="CheckBox" parent="Settings"]
+margin_left = 536.0
+margin_top = 48.0001
+margin_right = 638.0
+margin_bottom = 79.0001
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.752941, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+disabled = true
+text = "HARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DifficultyLabel" type="Label" parent="Settings"]
+margin_left = 56.0
+margin_top = 56.0
+margin_right = 170.0
+margin_bottom = 71.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "DIFFICULTY"
+
+[node name="Check20" type="CheckBox" parent="Settings"]
+margin_left = 256.0
+margin_top = 180.0
+margin_right = 365.0
+margin_bottom = 211.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.498039, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.27451, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "20 DAYS"
+
+[node name="Check30" type="CheckBox" parent="Settings"]
+margin_left = 392.0
+margin_top = 180.0
+margin_right = 501.0
+margin_bottom = 211.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.74902, 0.74902, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.27451, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+pressed = true
+text = "30 DAYS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Check45" type="CheckBox" parent="Settings"]
+margin_left = 528.0
+margin_top = 180.0
+margin_right = 637.0
+margin_bottom = 211.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.752941, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "45 DAYS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Check60" type="CheckBox" parent="Settings"]
+margin_left = 664.0
+margin_top = 180.0
+margin_right = 773.0
+margin_bottom = 211.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.392157, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.137255, 0, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "60 DAYS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Length" type="Label" parent="Settings"]
+margin_left = 56.0
+margin_top = 188.0
+margin_right = 170.0
+margin_bottom = 203.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "LENGTH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PriceHelpLabel" type="Label" parent="Settings"]
+margin_left = 56.0
+margin_top = 308.0
+margin_right = 173.0
+margin_bottom = 323.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 54 )
+text = "PRICE HELP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PriceHelpToggle" type="CheckButton" parent="Settings"]
+margin_left = 256.0
+margin_top = 300.0
+margin_right = 332.0
+margin_bottom = 340.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Settings"]
+margin_right = 56.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 4 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Label" parent="Settings"]
+margin_left = 176.0
+margin_top = 308.0
+margin_right = 216.0
+margin_bottom = 322.0
+hint_tooltip = "Turning this option on will change the colors of drugs based on their price. Will reduce the replayablity.
+
+[NOT RECOMMENDED]"
+mouse_filter = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "(?)"
+
+[node name="Hint2" type="Label" parent="Settings"]
+margin_left = 173.0
+margin_top = 56.0
+margin_right = 213.0
+margin_bottom = 70.0
+hint_tooltip = "Not implamented yet."
+mouse_filter = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "(?)"
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 1200.0
+margin_bottom = 720.0
+
+[node name="StartButton" type="TextureButton" parent="Menu"]
+margin_right = 400.0
+margin_bottom = 720.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="TextureButton" parent="Menu"]
+margin_left = 400.0
+margin_right = 800.0
+margin_bottom = 720.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="TextureButton" parent="Menu"]
+margin_left = 800.0
+margin_right = 1200.0
+margin_bottom = 720.0
+texture_normal = ExtResource( 2 )
+
+[node name="GameOver" type="WindowDialog" parent="."]
+margin_top = 20.0
+margin_right = 1200.0
+margin_bottom = 720.0
+window_title = "SCOREBOARD"
+
+[node name="Scoreboard20" type="ItemList" parent="GameOver"]
+anchor_left = -0.0638302
+anchor_top = -0.280421
+anchor_right = -0.0638302
+anchor_bottom = -0.280421
+margin_left = 92.5962
+margin_top = 264.295
+margin_right = 372.596
+margin_bottom = 864.295
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Scoreboard30" type="ItemList" parent="GameOver"]
+anchor_left = 0.01117
+anchor_top = -0.280421
+anchor_right = 0.01117
+anchor_bottom = -0.280421
+margin_left = 298.596
+margin_top = 264.295
+margin_right = 578.596
+margin_bottom = 864.295
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Scoreboard45" type="ItemList" parent="GameOver"]
+anchor_left = 0.08617
+anchor_top = -0.280421
+anchor_right = 0.08617
+anchor_bottom = -0.280421
+margin_left = 504.596
+margin_top = 264.295
+margin_right = 784.596
+margin_bottom = 864.295
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Scoreboard60" type="ItemList" parent="GameOver"]
+anchor_left = 0.162837
+anchor_top = -0.280421
+anchor_right = 0.162837
+anchor_bottom = -0.280421
+margin_left = 708.596
+margin_top = 264.295
+margin_right = 988.596
+margin_bottom = 864.295
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="GameOver"]
+anchor_left = -0.0309133
+anchor_top = -0.310421
+anchor_right = -0.0309133
+anchor_bottom = -0.310421
+margin_left = 166.596
+margin_top = 248.295
+margin_right = 219.596
+margin_bottom = 262.295
+text = "20 DAYS"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label3" type="Label" parent="GameOver"]
+anchor_left = 0.0507533
+anchor_top = -0.314707
+anchor_right = 0.0507533
+anchor_bottom = -0.314707
+margin_left = 364.596
+margin_top = 251.295
+margin_right = 417.596
+margin_bottom = 265.295
+text = "30 DAYS"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label4" type="Label" parent="GameOver"]
+anchor_left = 0.0349783
+anchor_top = -0.161343
+anchor_right = 0.0349783
+anchor_bottom = -0.161343
+margin_left = 679.526
+margin_top = 143.94
+margin_right = 732.526
+margin_bottom = 157.94
+text = "45 DAYS"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label5" type="Label" parent="GameOver"]
+anchor_left = 0.0349783
+anchor_top = -0.161343
+anchor_right = 0.0349783
+anchor_bottom = -0.161343
+margin_left = 975.526
+margin_top = 143.94
+margin_right = 1028.53
+margin_bottom = 157.94
+text = "60 DAYS"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Score" type="WindowDialog" parent="GameOver"]
+visible = true
+margin_left = 400.0
+margin_top = 240.0
+margin_right = 800.0
+margin_bottom = 480.0
+
+[node name="ScoreLbl" type="Label" parent="GameOver/Score"]
+margin_left = 29.0
+margin_top = 64.0
+margin_right = 372.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 50 )
+text = "$0"
+align = 1
+
+[node name="PlayerName" type="LineEdit" parent="GameOver/Score"]
+margin_left = 98.0
+margin_top = 187.0
+margin_right = 223.0
+margin_bottom = 213.0
+custom_fonts/font = ExtResource( 7 )
+max_length = 6
+placeholder_text = "PLAYER"
+
+[node name="PNameLbl" type="Label" parent="GameOver/Score"]
+margin_left = 25.0
+margin_top = 192.0
+margin_right = 86.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 7 )
+text = "NAME:"
+
+[node name="SaveScore" type="Button" parent="GameOver/Score"]
+margin_left = 284.0
+margin_top = 184.0
+margin_right = 362.0
+margin_bottom = 216.0
+custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = SubResource( 56 )
+text = "SAVE"
+
+[node name="Death" type="WindowDialog" parent="."]
+margin_top = 20.0
+margin_right = 1200.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 51 )
+window_title = "GAME OVER!"
+
+[node name="DeathLbl" type="Label" parent="Death"]
+margin_left = 22.5
+margin_top = 316.0
+margin_right = 1177.5
+margin_bottom = 384.0
+custom_colors/font_color = Color( 0.843137, 0, 0, 1 )
+custom_fonts/font = SubResource( 52 )
+text = "You have paid your debt by your life!"
+
+[connection signal="gui_input" from="Game" to="." method="_on_Game_gui_input"]
+[connection signal="gui_input" from="Game/Market" to="." method="_on_Market_gui_input"]
+[connection signal="gui_input" from="Game/Inventory" to="." method="_on_Inventory_gui_input"]
+[connection signal="pressed" from="Game/Buttons/TradeButton" to="." method="_on_TradeButton_pressed"]
+[connection signal="pressed" from="Game/Buttons/TradeButton2" to="." method="_on_TradeButton2_pressed"]
+[connection signal="pressed" from="Game/Buttons/TravelButton" to="." method="_on_TravelButton_pressed"]
+[connection signal="pressed" from="Game/Buttons/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="Game/Buttons/LoadButton" to="." method="_on_LoadButton_pressed"]
+[connection signal="pressed" from="Game/Buttons/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Game/Buttons/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Game/TravelMenu/Travel" to="." method="_on_Travel_pressed"]
+[connection signal="pressed" from="Game/TravelMenu/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="text_changed" from="Game/BuyPopup/BuyQuantity" to="." method="_on_BuyQuantity_text_changed"]
+[connection signal="pressed" from="Game/BuyPopup/ConfirmBuy" to="." method="_on_ConfirmBuy_pressed"]
+[connection signal="text_changed" from="Game/SellPopup/SellQuantity" to="." method="_on_SellQuantity_text_changed"]
+[connection signal="pressed" from="Game/SellPopup/ConfirmSell" to="." method="_on_ConfirmSell_pressed"]
+[connection signal="pressed" from="Game/Cops/Fight" to="." method="_on_Fight_pressed"]
+[connection signal="pressed" from="Game/Cops/Run" to="." method="_on_Run_pressed"]
+[connection signal="pressed" from="Game/Shark/PayButton" to="." method="_on_PayButton_pressed"]
+[connection signal="pressed" from="Game/Shark/BorrowButton" to="." method="_on_BorrowButton_pressed"]
+[connection signal="text_changed" from="Game/Shark/BorrowEdit" to="." method="_on_BorrowEdit_text_changed"]
+[connection signal="text_changed" from="Game/Shark/PayEdit" to="." method="_on_PayEdit_text_changed"]
+[connection signal="toggled" from="Game/Shark/BorrowMax" to="." method="_on_BorrowMax_toggled"]
+[connection signal="toggled" from="Game/Shark/PayMax" to="." method="_on_PayMax_toggled"]
+[connection signal="pressed" from="Game/Shark/SharkClose" to="." method="_on_SharkClose_pressed"]
+[connection signal="gui_input" from="Game/GunShop/PistolBtn" to="." method="_on_PistolBtn_gui_input"]
+[connection signal="mouse_entered" from="Game/GunShop/PistolBtn" to="." method="_on_PistolBtn_mouse_entered"]
+[connection signal="mouse_exited" from="Game/GunShop/PistolBtn" to="." method="_on_PistolBtn_mouse_exited"]
+[connection signal="gui_input" from="Game/GunShop/RevolverBtn" to="." method="_on_RevolverBtn_gui_input"]
+[connection signal="mouse_entered" from="Game/GunShop/RevolverBtn" to="." method="_on_RevolverBtn_mouse_entered"]
+[connection signal="mouse_exited" from="Game/GunShop/RevolverBtn" to="." method="_on_RevolverBtn_mouse_exited"]
+[connection signal="gui_input" from="Game/GunShop/SmgBtn" to="." method="_on_SmgBtn_gui_input"]
+[connection signal="mouse_entered" from="Game/GunShop/SmgBtn" to="." method="_on_SmgBtn_mouse_entered"]
+[connection signal="mouse_exited" from="Game/GunShop/SmgBtn" to="." method="_on_SmgBtn_mouse_exited"]
+[connection signal="gui_input" from="Game/GunShop/ShotgunBtn" to="." method="_on_ShotgunBtn_gui_input"]
+[connection signal="mouse_entered" from="Game/GunShop/ShotgunBtn" to="." method="_on_ShotgunBtn_mouse_entered"]
+[connection signal="mouse_exited" from="Game/GunShop/ShotgunBtn" to="." method="_on_ShotgunBtn_mouse_exited"]
+[connection signal="pressed" from="Game/GunShop/Button" to="." method="_on_Button_pressed"]
+[connection signal="confirmed" from="Game/LoadDialog" to="." method="_on_LoadDialog_confirmed"]
+[connection signal="confirmed" from="Game/RestartDialog" to="." method="_on_RestartDialog_confirmed"]
+[connection signal="confirmed" from="Game/MenuDialog" to="." method="_on_MenuDialog_confirmed"]
+[connection signal="pressed" from="Settings/EasyCheck" to="." method="_on_EasyCheck_pressed"]
+[connection signal="pressed" from="Settings/NormalCheck" to="." method="_on_NormalCheck_pressed"]
+[connection signal="pressed" from="Settings/HardCheck" to="." method="_on_HardCheck_pressed"]
+[connection signal="pressed" from="Settings/Check20" to="." method="_on_Check20_pressed"]
+[connection signal="pressed" from="Settings/Check30" to="." method="_on_Check30_pressed"]
+[connection signal="pressed" from="Settings/Check45" to="." method="_on_Check45_pressed"]
+[connection signal="pressed" from="Settings/Check60" to="." method="_on_Check60_pressed"]
+[connection signal="toggled" from="Settings/PriceHelpToggle" to="." method="_on_PriceHelpToggle_toggled"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Menu/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Menu/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Menu/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="GameOver/Score/SaveScore" to="." method="_on_SaveScore_pressed"]
+[connection signal="gui_input" from="Death" to="." method="_on_Death_gui_input"]

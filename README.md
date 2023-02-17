@@ -11,4 +11,4 @@
 
 CREATED BY KERIMCAN UZAR (2022)
 
-![Alt text](https://github.com/KerimcanUzar/drug_wars/blob/main/screenshot.png) "screenshot")
+![Screenshot](https://github.com/KerimcanUzar/drug_wars/blob/main/screenshot.png)
